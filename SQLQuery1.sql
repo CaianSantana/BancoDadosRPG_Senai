@@ -49,6 +49,8 @@ INSERT INTO ClasseHabilidade(IDClasse, IDHabilidade) VALUES (2,2),(2,3)
 
 SELECT * FROM Habilidades, Classes, Personagens, Usuarios
 
-SELECT P.NomePersonagem, C.NomeClasse 'Classe', C.DescricaoClasse FROM Personagens P JOIN Classes C
+SELECT U.Email ,P.NomePersonagem, C.NomeClasse 'Classe', C.DescricaoClasse FROM Usuarios U JOIN Personagens P 
+ON U.IDUsuario = P.IDUsuario
+JOIN Classes C
 ON P.IDClasse = C.IDClasse
 
